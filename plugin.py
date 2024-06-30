@@ -262,7 +262,7 @@ class MenuNavigator():
             playlist = themeFiles.getThemePlaylist()
             # Stop playing any existing theme
             self._stopPlayingTheme()
-            Player().PlayMedia(playlist)
+            Player().play(playlist)
         else:
             log("No themes found for %s" % path)
         del themeFiles

@@ -216,7 +216,7 @@ class NfoReader():
                 i = 0
                 while i < xbmcPlaylist.size():
                     # get the filename from the playlist
-                    file = xbmcPlaylist[i].getfilename()
+                    file = xbmcPlaylist[i].getPath()
                     i = i + 1
                     if (file is not None) and (file != ""):
                         log_msg("NfoReader: file from playlist = %s" % file, self.debug_logging_enabled)
@@ -340,7 +340,7 @@ class ThemeFiles():
             # Check if we are only supposed to play one theme when there are multiple
             # available
             if Settings.onlyPlaySingleTheme():
-                firstTheme = playlist[0].getfilename()
+                firstTheme = playlist[0].getPath()
                 playlist.clear()
                 playlist.add(url=firstTheme)
 
@@ -350,7 +350,7 @@ class ThemeFiles():
         # the seek dialog being displayed on the screen and also prevent
         # the need to start the theme playing before changing the start point
         if Settings.isRandomStart() and playlist.size() > 0:
-            filename = playlist[0].getfilename()
+            filename = playlist[0].getPath()
             duration = int(playlist[0].getduration())
 
             log_msg("ThemeFiles: Duration is %d for file %s" % (duration, filename), self.debug_logging_enabled)
@@ -654,7 +654,7 @@ class MusicThemeFiles():
             # Check if we are only supposed to play one theme when there are multiple
             # available
             if Settings.onlyPlaySingleTheme():
-                firstTheme = playlist[0].getfilename()
+                firstTheme = playlist[0].getPath()
                 playlist.clear()
                 playlist.add(url=firstTheme)
 
@@ -664,7 +664,7 @@ class MusicThemeFiles():
         # the seek dialog being displayed on the screen and also prevent
         # the need to start the theme playing before changing the start point
         if Settings.isRandomStart() and playlist.size() > 0:
-            filename = playlist[0].getfilename()
+            filename = playlist[0].getPath()
             duration = int(playlist[0].getduration())
 
             log_msg("MusicThemeFiles: Duration is %d for file %s" % (duration, filename), self.debug_logging_enabled)

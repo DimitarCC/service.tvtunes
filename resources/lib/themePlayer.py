@@ -216,7 +216,7 @@ class ThemePlayer(xbmc.Player):
                 try:
                     i = 0
                     while i < self.playlistSize:
-                        self.playListItems.append(item[i].getfilename())
+                        self.playListItems.append(item[i].getPath())
                         i = i + 1
                 except:
                     log_msg("ThemePlayer: Failed to save off playlist")
@@ -417,7 +417,7 @@ class ThemePlayer(xbmc.Player):
             hasVideoFiles = True
             i = 0
             while i < themePlayList.size():
-                if Settings.isVideoFile(themePlayList[i].getfilename()):
+                if Settings.isVideoFile(themePlayList[i].getPath()):
                     hasVideoFiles = True
                     break
                 i = i + 1
